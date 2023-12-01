@@ -18,8 +18,15 @@ node index.js
     - https://www.w3schools.com/whatis/whatis_http.asp
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
     - https://www.ibm.com/docs/en/environmental-intel-suite?topic=apis-defining-http-endpoints
-- [ ] Getting know about REST API
-- [ ] Getting know about JSON
-- [ ] How to write your first API
+- [x] Getting know about REST API
+- [x] Getting know about JSON
+     - https://www.w3schools.com/xml/schema_simple_attributes.asp
+     - https://jsonplaceholder.typicode.com/
+     - https://www.w3schools.com/js/js_json_intro.asp
+- [x] How to write your first API
 (OPTIONAL)
-- [ ] Connect your app to database
+- [x] Connect your app to database
+
+Suplementary:
+- https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+- https://www.youtube.com/watch?v=3_yxVjV88Zk
