@@ -1,13 +1,12 @@
-
 const { Pool } = require('pg');
 
 class TodoRepository {
-  constructor() {
+  constructor(user, host, database, password, port) {
     this.pool = new Pool({
-      user: 'your_username',
-      host: 'your_host',
-      database: 'your_database',
-      password: 'your_password',
+      user: user,
+      host: host,
+      database: database,
+      password: password,
       port: 5432,
     });
   }
@@ -25,7 +24,10 @@ class TodoRepository {
   async addTodo(todo) {
     const client = await this.pool.connect();
     try {
-      await client.query('INSERT INTO todos (title, description) VALUES ($1, $2)', [todo.title, todo.description]);
+      await client.query(
+        'INSERT INTO todos (title, description) VALUES ($1, $2)',
+        [todo.title, todo.description]
+      );
     } finally {
       client.release();
     }
@@ -43,7 +45,10 @@ class TodoRepository {
   async updateTodoById(id, updatedTodo) {
     const client = await this.pool.connect();
     try {
-      await client.query('UPDATE todos SET title = $1, description = $2 WHERE id = $3', [updatedTodo.title, updatedTodo.description, id]);
+      await client.query(
+        'UPDATE todos SET title = $1, description = $2 WHERE id = $3',
+        [updatedTodo.title, updatedTodo.description, id]
+      );
     } finally {
       client.release();
     }

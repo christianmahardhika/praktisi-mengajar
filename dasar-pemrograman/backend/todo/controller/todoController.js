@@ -3,20 +3,33 @@ class TodoController {
     this.todoService = todoService;
   }
 
-  getAllTodos() {
-    return this.todoService.getAllTodos();
+  getAllTodos(req, res) {
+    let result = this.todoService.getAllTodos();
+    res.Send(result);
   }
 
-  addTodo(todo) {
-    this.todoService.addTodo(todo);
+  getTodoById(req, res) {
+    let id = req.params.id;
+    let result = this.todoService.getTodoById(id);
+    res.Send(result);
   }
 
-  deleteTodoById(id) {
-    this.todoService.deleteTodoById(id);
+  addTodo(req, res) {
+    let todo = req.body;
+    let result = this.todoService.addTodo(todo);
+    res.Send(result);
   }
 
-  updateTodoById(id, updatedTodo) {
-    this.todoService.updateTodoById(id, updatedTodo);
+  deleteTodoById(req, res) {
+    let id = req.params.id;
+    let result = this.todoService.deleteTodoById(id);
+    res.Send(result);
+  }
+
+  updateTodoById(req, res) {
+    let id = req.params.id;
+    let result = this.todoService.updateTodoById(id, updatedTodo);
+    res.Send(result);
   }
 }
 
